@@ -8,44 +8,76 @@
     <script src="./script.js" defer></script>
     <title>Document</title>
   </head>
-  <body class="flex">
+  <body class="flex dark:bg-slate-800">
     <div id="form-div" class="p-14">
-        <h1 class="text-3xl">Add your own</h1>
-        <p class="text-xl">Use the proceeding form to add your own book to the library!</p>
-        <form action="get" class="flex flex-col gap-4">
-          <div class="flex flex-col">
-              <label for="author">Author</label>
-              <input type="text" name="author" id="author" />
-              
+      <h1 class="text-3xl block mb-2 font-medium text-gray-900 dark:text-white">Add your own</h1>
+      <p class="text-xl block mb-2 font-medium text-gray-900 dark:text-white">
+        Use the proceeding form to add your own book to the library!
+      </p>
+      <form action="get" class="flex flex-col gap-4">
+        <div class="flex flex-col">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            for="author"
+            >Author</label
+          >
+          <input class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="author" id="author" />
+        </div>
+        <div class="flex flex-col">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            for="bookname"
+            >Title</label
+          >
+          <input
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            name="bookname"
+            id="bookname"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            for="numberOfPages"
+            >Number of pages</label
+          >
+          <input
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            name="numberOfPages"
+            id="numberOfPages"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="photo-url">Photo Url</label>
+          <input
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            class=""
+            name="photo-url"
+            id="photo-url"
+          />
+        </div>
+
+        <fieldset class="flex flex-col">
+          <legend class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Have you read the book?</legend>
+          <div>
+            <input type="radio" name="has-read" id="yes-read" checked />
+            <label for="yes-read" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Yes</label>
           </div>
-          <div class="flex flex-col">
-              <label for="bookname">Title</label>
-              <input type="text" class="" name="bookname" id="bookname" />
-              
+          <div>
+            <input type="radio" name="has-read" id="no-read" />
+            <label for="no-read" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">No</label>
           </div>
-          <div class="flex flex-col">
-              <label for="numberOfPages">Number of pages</label>
-              <input type="text" class="" name="numberOfPages" id="numberOfPages" />
-              
-          </div>
-          <div class="flex flex-col">
-              <label for="photo-url">Input a url of the photo</label>
-              <input type="text" class="" name="photo-url" id="photo-url">
-          </div>
-          
-          <fieldset class="flex flex-col">
-            <legend>Have you read the book?</legend>
-            <div>
-                <input type="radio" name="has-read" id="yes-read" checked>
-                <label for="yes-read">Yes</label>
-            </div>
-            <div>
-                <input type="radio" name="has-read" id="no-read">
-                <label for="no-read">No</label>
-            </div>
-          </fieldset>
-          <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Add your book!</button>
-        </form>
+        </fieldset>
+        <button
+          type="submit"
+          class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          Add your book!
+        </button>
+      </form>
     </div>
     <div id="books"></div>
   </body>
