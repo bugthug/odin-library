@@ -2,42 +2,65 @@ const manufacturingConsentBook = new Book(
   "Manufacturing Consent",
   "Edward S. Hermann, Noam Chomsky",
   "./assets/mc-cover.jpeg",
-  true
+  true,
+  480
 );
 
 const theRacketBook = new Book(
   "The Racket",
   "Matt Kennard",
   "./assets/The_Racket_(book).jpg",
-  false
+  false,
+  416
 );
 
-let myLibrary = [manufacturingConsentBook];
+let myLibrary = [];
 
-function Book(title, author, photo, read) {
+function Book(title, author, photo, read, pageNumber) {
   this.title = title;
   this.author = author;
   this.photo = photo;
   this.read = read;
+  this.pageNumber = pageNumber;
 }
 
-function addBookToLibrary(title, author, photo) {
-  const bookToAdd = new Book(title, author, photo);
-  myLibrary.push(bookToAdd);
-}
+function addBook(book) {
+  function addBookToLibraryArray(book) {
+    const bookToAdd = new Book(
+      book.title,
+      book.author,
+      book.photo,
+      book.read,
+      book.pageNumber
+    );
+    myLibrary.push(bookToAdd);
+  }
 
-function updateDisplayedBooks(book) {
-  myLibrary.forEach((book) => {});
+  addBookToLibraryArray(book);
+  const booksDiv = document.querySelector("#books");
+  booksDiv.innerHTML = "";
+  myLibrary.forEach((book) => {
+    addBookElement(book);
+  });
 }
 
 function addBookElement(book) {
   // "weird" use of classes is because of tailwind css
+
   const newBookDiv = document.createElement("div");
   newBookDiv.setAttribute("class", "relative flex gap-5 p-7 border-4 w-96");
+
+  const numberOfPagesElement = document.createElement("p");
+  numberOfPagesElement.setAttribute(
+    "class",
+    "w-24 text-center mr-auto absolute top-0 right-0 bg-slate-500 text-yellow-100"
+  );
+  numberOfPagesElement.textContent = `${book.pageNumber} pages`;
+  newBookDiv.appendChild(numberOfPagesElement);
+
   const coverImage = document.createElement("img");
   coverImage.classList.add("w-24");
   coverImage.setAttribute("src", book.photo);
-
   newBookDiv.appendChild(coverImage);
 
   const textInfoDiv = document.createElement("div");
@@ -75,5 +98,5 @@ function addBookElement(book) {
   books.appendChild(newBookDiv);
 }
 
-addBookElement(manufacturingConsentBook);
-addBookElement(theRacketBook);
+addBook(manufacturingConsentBook);
+addBook(theRacketBook);

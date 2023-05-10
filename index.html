@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
     <script src="./script.js" defer></script>
     <title>Document</title>
-</head>
-<body>
-    <div id="books">
+  </head>
+  <body>
+    <h1 class="text-3xl">Add your own</h1>
+    <p>Use the proceeding form to add your own book to the library!</p>
+    <form action="get">
+      <label for="bookname">Title</label>
+      <input type="text" name="bookname" id="book-title" />
 
-    </div>
-</body>
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author" />
+
+      
+    </form>
+    <div id="books"></div>
+  </body>
 </html>
