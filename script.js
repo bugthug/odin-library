@@ -14,6 +14,39 @@ const theRacketBook = new Book(
   416
 );
 
+function addUserInputtedBook() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    const bookTitle = document.getElementById("bookname").value;
+    const bookAuthor = document.getElementById("author").value;
+    const bookPhoto = document.getElementById("photo-url").value;
+    const valueRead = document.querySelector(
+      'input[name="has-read"]:checked'
+    ).value;
+    const photo = document.getElementById("numberOfPages").value;
+    const pageNumber = document.getElementById("numberOfPages").value;
+
+    // conversion to boolean format is necessary per Book properties
+    const read = valueRead == "yes" ? true : false;
+
+    const userAddedBook = new Book(
+      bookTitle,
+      bookAuthor,
+      bookPhoto,
+      read,
+      pageNumber
+    );
+
+
+    addBook(userAddedBook);
+    
+  }
+
+  const inputButton = document.querySelector('button[type="submit"]');
+  console.log(inputButton);
+  inputButton.addEventListener("click", handleSubmit);
+}
+
 let myLibrary = [];
 
 function Book(title, author, photo, read, pageNumber) {
@@ -48,7 +81,10 @@ function addBookElement(book) {
   // "weird" use of classes is because of tailwind css
 
   const newBookDiv = document.createElement("div");
-  newBookDiv.setAttribute("class", "relative flex gap-5 p-7 border-4 w-96");
+  newBookDiv.setAttribute(
+    "class",
+    "relative flex gap-5 p-7 border-4 w-96 dark:border-slate-600"
+  );
 
   const numberOfPagesElement = document.createElement("p");
   numberOfPagesElement.setAttribute(
@@ -66,13 +102,19 @@ function addBookElement(book) {
   const textInfoDiv = document.createElement("div");
 
   const titleElement = document.createElement("h1");
-  titleElement.setAttribute("class", "text-xl font-semibold");
+  titleElement.setAttribute(
+    "class",
+    "text-xl block mb-2 text-gray-900 dark:text-white font-bold"
+  );
   titleElement.textContent = book.title;
   textInfoDiv.appendChild(titleElement);
 
   const authorElement = document.createElement("p");
-  authorElement.setAttribute("class", "italic");
-  authorElement.textContent = `By ${book.author}`;
+  authorElement.setAttribute(
+    "class",
+    "italic mb-2 text-sm font-medium text-gray-900 dark:text-white"
+  );
+  authorElement.textContent = `${book.author}`;
   textInfoDiv.appendChild(authorElement);
 
   newBookDiv.appendChild(textInfoDiv);
@@ -99,4 +141,4 @@ function addBookElement(book) {
 }
 
 addBook(manufacturingConsentBook);
-addBook(theRacketBook);
+addUserInputtedBook();

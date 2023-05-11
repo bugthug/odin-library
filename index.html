@@ -9,8 +9,17 @@
     <title>Document</title>
   </head>
   <body class="flex dark:bg-slate-800">
+    <div>
+      <button
+        class="fixed bottom-10 right-10 block mb-2 font-medium text-gray-900 dark:text-white"
+      >
+        Add your own
+      </button>
+    </div>
     <div id="form-div" class="p-14">
-      <h1 class="text-3xl block mb-2 font-medium text-gray-900 dark:text-white">Add your own</h1>
+      <h1 class="text-3xl block mb-2 font-medium text-gray-900 dark:text-white">
+        Add your own
+      </h1>
       <p class="text-xl block mb-2 font-medium text-gray-900 dark:text-white">
         Use the proceeding form to add your own book to the library!
       </p>
@@ -21,7 +30,12 @@
             for="author"
             >Author</label
           >
-          <input class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="author" id="author" />
+          <input
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            name="author"
+            id="author"
+          />
         </div>
         <div class="flex flex-col">
           <label
@@ -50,7 +64,11 @@
           />
         </div>
         <div class="flex flex-col">
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="photo-url">Photo Url</label>
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            for="photo-url"
+            >Photo Url</label
+          >
           <input
             class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             type="text"
@@ -61,14 +79,32 @@
         </div>
 
         <fieldset class="flex flex-col">
-          <legend class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Have you read the book?</legend>
+          <legend
+            class="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
+          >
+            Have you read the book?
+          </legend>
           <div>
-            <input type="radio" name="has-read" id="yes-read" checked />
-            <label for="yes-read" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Yes</label>
+            <input
+              type="radio"
+              name="has-read"
+              id="yes-read"
+              value="yes"
+              checked
+            />
+            <label
+              for="yes-read"
+              class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Yes</label
+            >
           </div>
           <div>
-            <input type="radio" name="has-read" id="no-read" />
-            <label for="no-read" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">No</label>
+            <input type="radio" name="has-read" id="no-read" value="no" />
+            <label
+              for="no-read"
+              class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >No</label
+            >
           </div>
         </fieldset>
         <button
