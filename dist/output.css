@@ -610,6 +610,10 @@ video {
   flex-direction: column;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .gap-4 {
   gap: 1rem;
 }

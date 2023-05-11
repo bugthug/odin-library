@@ -75,7 +75,14 @@ function Book(title, author, photo, read, pageNumber) {
   this.photo = photo;
   this.read = read;
   this.pageNumber = pageNumber;
+
 }
+
+Book.prototype.toggleReadStatus = function() {
+  this.read = !this.read;
+  return;
+};
+
 
 function addBook(book) {
   function addBookToLibraryArray(book) {
@@ -190,7 +197,7 @@ function addBookElement(book, index) {
   function handleReadButtonClick(e) {
     const indexValue = this.getAttribute(SHARED_ATTRIBUTE);
     
-    myLibrary[indexValue].read = myLibrary[indexValue].read ? false : true;
+    myLibrary[indexValue].toggleReadStatus();
     updateBooks();
   }
 
