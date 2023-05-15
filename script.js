@@ -1,3 +1,19 @@
+class Book {
+  constructor(title, author, photo, read, pageNumber) {
+    this.title = title;
+    this.author = author;
+    this.photo = photo;
+    this.read = read;
+    this.pageNumber = pageNumber;
+  }
+
+  toggleReadStatus() {
+    this.read = !this.read;
+    return;
+  }
+}
+
+
 const SHARED_ATTRIBUTE = "data-mylibrary-index";
 
 const manufacturingConsentBook = new Book(
@@ -69,19 +85,15 @@ function addUserInputtedBookOnClick() {
 
 let myLibrary = [];
 
-function Book(title, author, photo, read, pageNumber) {
-  this.title = title;
-  this.author = author;
-  this.photo = photo;
-  this.read = read;
-  this.pageNumber = pageNumber;
+// function Book(title, author, photo, read, pageNumber) {
+//   this.title = title;
+//   this.author = author;
+//   this.photo = photo;
+//   this.read = read;
+//   this.pageNumber = pageNumber;
 
-}
+// }
 
-Book.prototype.toggleReadStatus = function() {
-  this.read = !this.read;
-  return;
-};
 
 
 function addBook(book) {
